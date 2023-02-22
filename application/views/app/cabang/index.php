@@ -26,36 +26,40 @@
           <a href="<?= base_url("cabang/add") ?>" class="btn btn-primary float-right">TAMBAH DATA</a>
         </div>
         <div class="col-12">
-          <table class="table table-print">
-            <thead>
-              <th>#</th>
-              <th>Nama Cabang</th>
-              <th>Lokasi</th>
-              <th>Nomor WA</th>
-              <!-- <th>File</th> -->
-              <th>Aksi</th>
-            </thead>
-            <tbody>
-              <?php $nomor = 1 ?>
-              <?php foreach($cabang as $data): ?>
-              <tr>
-                <td><?= $nomor++ ?></td>
-                <td><?= $data['nama'] ?></td>
-                <td><?= $data['lokasi'] ?></td>
-                <td><?= $data['nomor_hp'] ?></td>
-                <!-- <td>
-                  <a href="<?= base_url("uploads/cabang/") . $data['file'] ?>" download>
-                    <i class="fas fa-fw fa-download"></i>
-                  </a>
-                </td> -->
-                <td>
-                  <a href="<?= base_url("cabang/edit/") . $data['id'] ?>" class="badge badge-info badge-sm">Edit</a>
-                  <a href="#!" class="badge badge-danger badge-sm" data-id="<?= $data['id'] ?>" data-toggle="modal" data-target="#hapusModal" onclick="hapusData(this)">Hapus</a>
-                </td>
-              </tr>
-              <?php endforeach; ?>
-            </tbody>
-          </table>
+          <div class="card">
+            <div class="card-body">
+              <table class="table table-print">
+                <thead>
+                  <th>#</th>
+                  <th>Nama Cabang</th>
+                  <th>Lokasi</th>
+                  <th>Nomor WA</th>
+                  <!-- <th>File</th> -->
+                  <th>Aksi</th>
+                </thead>
+                <tbody>
+                  <?php $nomor = 1 ?>
+                  <?php foreach($cabang as $data): ?>
+                  <tr>
+                    <td><?= $nomor++ ?></td>
+                    <td><?= $data['nama'] ?></td>
+                    <td><?= $data['lokasi'] ?></td>
+                    <td><?= $data['nomor_hp'] ?></td>
+                    <!-- <td>
+                      <a href="<?= base_url("uploads/cabang/") . $data['file'] ?>" download>
+                        <i class="fas fa-fw fa-download"></i>
+                      </a>
+                    </td> -->
+                    <td>
+                      <a href="<?= base_url("cabang/edit/") . $data['id'] ?>" class="badge badge-info badge-sm">Edit</a>
+                      <a href="#!" class="badge badge-danger badge-sm" data-id="<?= $data['id'] ?>" data-toggle="modal" data-target="#hapusModal" onclick="hapusData(this)">Hapus</a>
+                    </td>
+                  </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>

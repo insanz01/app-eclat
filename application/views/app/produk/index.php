@@ -26,41 +26,46 @@
           <a href="<?= base_url("produk/add") ?>" class="btn btn-primary float-right">TAMBAH DATA</a>
         </div>
         <div class="col-12">
-          <table class="table table-print">
-            <thead>
-              <th>#</th>
-              <th>Nama Produk</th>
-              <th>Harga</th>
-              <th>Merk</th>
-              <th>Detail</th>
-              <th>File</th>
-              <th>Aksi</th>
-            </thead>
-            <tbody>
-              <?php $nomor = 1 ?>
-              <?php foreach($produk as $data): ?>
-              <tr>
-                <td><?= $nomor++ ?></td>
-                <td><?= $data['nama'] ?></td>
-                <td><?= $data['harga'] ?></td>
-                <td><?= $data['merk'] ?></td>
-                <td><?= $data['detail'] ?></td>
-                <td>
-                  <img src="<?= base_url("uploads/image/") . $data['foto'] ?>" width="200px">
-                </td>
-                <!-- <td>
-                  <a href="<?= base_url("uploads/cabang/") . $data['file'] ?>" download>
-                    <i class="fas fa-fw fa-download"></i>
-                  </a>
-                </td> -->
-                <td>
-                  <a href="<?= base_url("produk/edit/") . $data['id'] ?>" class="badge badge-info badge-sm">Edit</a>
-                  <a href="#!" class="badge badge-danger badge-sm" data-id="<?= $data['id'] ?>" data-toggle="modal" data-target="#hapusModal" onclick="hapusData(this)">Hapus</a>
-                </td>
-              </tr>
-              <?php endforeach; ?>
-            </tbody>
-          </table>
+          <div class="card">
+            <div class="card-body">
+
+              <table class="table table-print">
+                <thead>
+                  <th>#</th>
+                  <th>Nama Produk</th>
+                  <th>Harga</th>
+                  <th>Merk</th>
+                  <th>Detail</th>
+                  <th>File</th>
+                  <th>Aksi</th>
+                </thead>
+                <tbody>
+                  <?php $nomor = 1 ?>
+                  <?php foreach($produk as $data): ?>
+                  <tr>
+                    <td><?= $nomor++ ?></td>
+                    <td><?= $data['nama'] ?></td>
+                    <td><?= $data['harga'] ?></td>
+                    <td><?= $data['merk'] ?></td>
+                    <td><?= $data['detail'] ?></td>
+                    <td>
+                      <img src="<?= base_url("uploads/image/") . $data['foto'] ?>" width="200px">
+                    </td>
+                    <!-- <td>
+                      <a href="<?= base_url("uploads/cabang/") . $data['file'] ?>" download>
+                        <i class="fas fa-fw fa-download"></i>
+                      </a>
+                    </td> -->
+                    <td>
+                      <a href="<?= base_url("produk/edit/") . $data['id'] ?>" class="badge badge-info badge-sm">Edit</a>
+                      <a href="#!" class="badge badge-danger badge-sm" data-id="<?= $data['id'] ?>" data-toggle="modal" data-target="#hapusModal" onclick="hapusData(this)">Hapus</a>
+                    </td>
+                  </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>

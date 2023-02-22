@@ -60,13 +60,15 @@
         <div class="col-4">
           <div class="card">
             <div class="card-body">
-              <div class="form-group">
-                <label for="cek_item">KTP Penyewa</label>
-                <input type="text" name="KTP_penyewa" id="KTP_penyewa" class="form-control">
-              </div>  
-              <div class="form-group">
-                <button class="btn btn-primary btn-block">CHECK KTP</button>
-              </div>
+              <form action="<?= base_url("transaksi/kembali/check_produk") ?>" method="post">
+                <div class="form-group">
+                  <label for="cek_item">KTP Penyewa</label>
+                  <input type="text" name="KTP_penyewa" id="KTP_penyewa" class="form-control">
+                </div>  
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary btn-block">CHECK KTP</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>

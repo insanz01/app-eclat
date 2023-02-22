@@ -11,8 +11,8 @@ class TransaksiModel extends CI_Model {
     return $this->db->query($query)->row_array();
   }
 
-  public function get_produk_kembali_by_KTP($NIP_penyewa) {
-    $query = "SELECT sewa_keluar.id as id_sewa, produk.id as id_produk, produk.nama, produk.detail, produk.merk, produk.harga, sewa_keluar.NIP_penyewa, sewa_keluar.nama_penyewa, sewa_keluar.jumlah, sewa_keluar.created_at as tanggal_sewa FROM sewa_keluar JOIN produk ON sewa_keluar.id_produk = produk.id WHERE sewa_keluar.NIP_penyewa = '$NIP_penyewa' WHERE sewa_keluar.id not in (SELECT id_sewa_keluar FROM sewa_masuk)";
+  public function get_produk_kembali_by_KTP($KTP_penyewa) {
+    $query = "SELECT sewa_keluar.id as id_sewa, produk.id as id_produk, produk.nama, produk.detail, produk.merk, produk.harga, sewa_keluar.KTP_penyewa, sewa_keluar.nama_penyewa, sewa_keluar.jumlah, sewa_keluar.created_at as tanggal_sewa FROM sewa_keluar JOIN produk ON sewa_keluar.id_produk = produk.id WHERE sewa_keluar.KTP_penyewa = '$KTP_penyewa' AND sewa_keluar.id not in (SELECT id_sewa_keluar FROM sewa_masuk);";
 
     return $this->db->query($query)->result_array();
   }
@@ -55,7 +55,7 @@ class TransaksiModel extends CI_Model {
   public function update_stok_keluar($id_produk, $jumlah) {
     $produk_katalog = $this->db->get_where("katalog", ["id_produk" => $id_produk])->row_array();
 
-    $update_stok = $produk_katalog - $jumlah;
+    $update_stok = $produk_katalog['jumlah'] - $jumlah;
     if($update_stok < 0) {
       return false;
     }
@@ -70,7 +70,7 @@ class TransaksiModel extends CI_Model {
   public function update_stok_kembali($id_produk, $jumlah) {
     $produk_katalog = $this->db->get_where("katalog", ["id_produk" => $id_produk])->row_array();
 
-    $update_stok = $produk_katalog + $jumlah;
+    $update_stok = $produk_katalog['jumlah'] + $jumlah;
 
     $this->db->set("jumlah", $update_stok);
     $this->db->where("id_produk", $id_produk);

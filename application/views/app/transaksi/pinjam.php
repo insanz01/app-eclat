@@ -73,7 +73,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <form action="<?= base_url("transaksi/do_keluar") ?>" method="post">
+      <form action="<?= base_url("transaksi/do_pinjam") ?>" method="post">
         <div class="modal-body">
           <input type="hidden" id="id_produk-sewa" name="id_produk">
           <div class="form-group">

@@ -6,6 +6,7 @@ class LaporanController extends CI_Controller {
 
     $this->load->model("ProdukModel", "produk_m");
     $this->load->model("CabangModel", "cabang_m");
+    $this->load->model("TransaksiModel", "transaksi_m");
   }
 
   public function produk() {
@@ -29,10 +30,12 @@ class LaporanController extends CI_Controller {
   }
 
   public function katalog() {
+    $data['transaksi'] = $this->transaksi_m->get_all_report();
+
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
     $this->load->view('templates/panel/navbar');
-    $this->load->view('app/laporan/katalog/index');
+    $this->load->view('app/laporan/katalog/index', $data);
     $this->load->view('templates/panel/footer');
   }
 }

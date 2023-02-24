@@ -95,3 +95,11 @@ $route["transaksi/do_pinjam"] = "TransaksiController/do_pinjam";
 $route["transaksi/kembali"] = "TransaksiController/kembali";
 $route["transaksi/kembali/check_produk"] = "TransaksiController/check_produk_kembali";
 $route["transaksi/do_kembali"] = "TransaksiController/do_kembali";
+
+$route["print"] = "PrintController/index";
+$route["print/setup"] = "PrintController/setup";
+
+$route["print/produk"] = "PrintController/produk";
+$route["print/cabang"] = "PrintController/cabang";
+$route["print/transaksi"] = "PrintController/transaksi";
+$route["print/sewa_masuk"] = "PrintController/sewa_masuk";

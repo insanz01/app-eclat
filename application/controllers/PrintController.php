@@ -6,7 +6,35 @@ class PrintController extends CI_Controller {
 
     $this->load->model("ProdukModel", "produk_m");
     $this->load->model("CabangModel", "cabang_m");
-    // $this->load->model("CabangModel", "cabang_m");
+    $this->load->model("TransaksiModel", "transaksi_m");
+  }
+
+  public function index() {
+    $this->load->view('templates/panel/header');
+    $this->load->view('templates/panel/sidebar');
+    $this->load->view('templates/panel/navbar');
+    $this->load->view('app/print/setup');
+    $this->load->view('templates/panel/footer');
+  }
+
+  public function setup() {
+    $jenisLaporan = $this->input->post("jenis_laporan");
+
+    switch($jenisLaporan) {
+      case "produk":
+        $this->produk();
+        break;
+      case "cabang":
+        $this->cabang();
+        break;
+      case "transaksi":
+        $this->transaksi();
+        break;
+      case "sewa_masuk":
+        // $this->sewa_masuk();
+        var_dump("sementara fitur ini ga ada, aplikasi xampp nda rusak");
+        break;
+    }
   }
 
   public function produk() {

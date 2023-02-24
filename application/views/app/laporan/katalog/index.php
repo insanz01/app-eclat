@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Transaksi Cabang</h1>
+          <h1 class="m-0 text-dark"></h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <!-- <ol class="breadcrumb float-sm-right">
@@ -29,6 +29,9 @@
         </div>
         <div class="col-12">
           <div class="card">
+            <div class="card-header">
+              <h3>Transaksi Cabang</h3>
+            </div>
             <div class="card-body">
               <table class="table table-print">
                 <thead>

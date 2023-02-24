@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>E-Memodul | Login</title>
+  <title>Kanigara | Login</title>
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Font Awesome -->
@@ -31,7 +31,6 @@
   <!-- DataTables -->
   <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="<?= base_url() ?>assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-
 
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <!-- <script src="<?= base_url() ?>assets/dist/js/axios.min.js"></script> -->

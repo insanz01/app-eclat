@@ -58,6 +58,8 @@ $route['auth'] = "AuthController/index";
 $route['auth/do_login'] = "AuthController/do_login";
 $route['auth/logout'] = "AuthController/do_logout";
 
+$route['dashboard'] = "AppController/index";
+
 // CABANG
 $route['cabang'] = "CabangController/index";
 $route['cabang/add'] = "CabangController/add";

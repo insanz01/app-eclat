@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Produk</h1>
+          <h1 class="m-0 text-dark"></h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <!-- <ol class="breadcrumb float-sm-right">
@@ -28,27 +28,34 @@
           </div>
         </div>
         <div class="col-12">
-          <table class="table table-print">
-            <thead>
-              <th>#</th>
-              <th>Nama Produk</th>
-              <th>Merk Produk</th>
-              <th>Harga Sewa</th>
-              <th>Tanggal Ditambahkan</th>
-            </thead>
-            <tbody>
-              <?php $nomor = 1 ?>
-              <?php foreach($produk as $data): ?>
-                <tr>
-                  <td><?= $nomor++ ?></td>
-                  <td><?= $data['nama'] ?></td>
-                  <td><?= $data['merk'] ?></td>
-                  <td><?= $data['harga'] ?></td>
-                  <td><?= date("d M Y", strtotime($data['created_at'])) ?></td>
-                </tr>
-              <?php endforeach; ?>
-            </tbody>
-          </table>
+          <div class="card">
+            <div class="card-header">
+              <h3>Produk</h3>
+            </div>
+            <div class="card-body">
+              <table class="table table-print">
+                <thead>
+                  <th>#</th>
+                  <th>Nama Produk</th>
+                  <th>Merk Produk</th>
+                  <th>Harga Sewa</th>
+                  <th>Tanggal Ditambahkan</th>
+                </thead>
+                <tbody>
+                  <?php $nomor = 1 ?>
+                  <?php foreach($produk as $data): ?>
+                    <tr>
+                      <td><?= $nomor++ ?></td>
+                      <td><?= $data['nama'] ?></td>
+                      <td><?= $data['merk'] ?></td>
+                      <td><?= $data['harga'] ?></td>
+                      <td><?= date("d M Y", strtotime($data['created_at'])) ?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>

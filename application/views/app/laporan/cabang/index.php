@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row mb-2">
         <div class="col-sm-6">
-          <h1 class="m-0 text-dark">Cabang</h1>
+          <h1 class="m-0 text-dark"></h1>
         </div><!-- /.col -->
         <div class="col-sm-6">
           <!-- <ol class="breadcrumb float-sm-right">
@@ -28,27 +28,34 @@
           </div>
         </div>
         <div class="col-12">
-          <table class="table table-print">
-            <thead>
-              <th>#</th>
-              <th>Nama Cabang</th>
-              <th>Lokasi Cabang</th>
-              <th>Total Produk</th>
-              <th>Tanggal Registrasi</th>
-            </thead>
-            <tbody>
-              <?php $nomor = 1; ?>
-              <?php foreach($cabang as $data): ?>
-                <tr>
-                  <td><?= $nomor++ ?></td>
-                  <td><?= $data['nama'] ?></td>
-                  <td><?= $data['lokasi'] ?></td>
-                  <td><?= $data['total_item'] ?></td>
-                  <td><?= date("d M Y", strtotime($data['created_at'])) ?></td>
-                </tr>
-              <?php endforeach; ?>
-            </tbody>
-          </table>
+          <div class="card">
+            <div class="card-header">
+              <h3>Cabang</h3>
+            </div>
+            <div class="card-body">
+              <table class="table table-print">
+                <thead>
+                  <th>#</th>
+                  <th>Nama Cabang</th>
+                  <th>Lokasi Cabang</th>
+                  <th>Total Produk</th>
+                  <th>Tanggal Registrasi</th>
+                </thead>
+                <tbody>
+                  <?php $nomor = 1; ?>
+                  <?php foreach($cabang as $data): ?>
+                    <tr>
+                      <td><?= $nomor++ ?></td>
+                      <td><?= $data['nama'] ?></td>
+                      <td><?= $data['lokasi'] ?></td>
+                      <td><?= $data['total_item'] ?></td>
+                      <td><?= date("d M Y", strtotime($data['created_at'])) ?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>

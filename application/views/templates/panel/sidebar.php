@@ -111,6 +111,16 @@
             </ul>
           </li>
 
+          <li class="nav-item">
+            <a href="<?= base_url("print") ?>" class="nav-link">
+              <i class="nav-icon fas fa-print"></i>
+              <p>
+                PRINT LAPORAN
+                <!-- <span class="badge badge-info right">2</span> -->
+              </p>
+            </a>
+          </li>
+
         <?php if($this->session->userdata('SESS_SPPD_ROLEID') == 2): ?>
           <!-- <li class="nav-item has-treeview">
             <a href="#" class="nav-link">

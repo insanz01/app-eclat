@@ -53,6 +53,11 @@ $route['default_controller'] = 'AppController/index';
 $route['404_override'] = 'ErrorController/not_found';
 $route['translate_uri_dashes'] = FALSE;
 
+// AUTH
+$route['auth'] = "AuthController/index";
+$route['auth/do_login'] = "AuthController/do_login";
+$route['auth/logout'] = "AuthController/do_logout";
+
 // CABANG
 $route['cabang'] = "CabangController/index";
 $route['cabang/add'] = "CabangController/add";

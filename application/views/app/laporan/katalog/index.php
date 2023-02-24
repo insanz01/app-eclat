@@ -28,28 +28,29 @@
           </div>
         </div>
         <div class="col-12">
-          <table class="table table-print">
-            <thead>
-              <th>#</th>
-              <th>Nama Produk</th>
-              <th>Nama Cabang</th>
-              <th>Transaksi Bulan Ini</th>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Helm</td>
-                <td>Yogyakarta</td>
-                <td>500</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>Buff</td>
-                <td>Yogyakarta</td>
-                <td>300</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="card">
+            <div class="card-body">
+              <table class="table table-print">
+                <thead>
+                  <th>#</th>
+                  <th>Nama Produk</th>
+                  <th>Nama Cabang</th>
+                  <th>Transaksi Bulan Ini</th>
+                </thead>
+                <tbody>
+                  <?php $nomor = 1; ?>
+                  <?php foreach($transaksi as $data): ?>
+                    <tr>
+                      <td><?= $nomor++ ?></td>
+                      <td><?= $data['nama_produk'] ?></td>
+                      <td><?= $data['nama_cabang'] ?></td>
+                      <td><?= $data['jumlah_sewa'] ?></td>
+                    </tr>
+                  <?php endforeach; ?>
+                </tbody>
+              </table>
+            </div>
+          </div>
         </div>
       </div>
     </div>

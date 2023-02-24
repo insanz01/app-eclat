@@ -78,4 +78,10 @@ class TransaksiModel extends CI_Model {
 
     return $this->db->affected_rows();
   }
+
+  public function get_all_report() {
+    $query = "SELECT sewa_keluar.id_produk, produk.nama as nama_produk, katalog.id_cabang, cabang.nama as nama_cabang, SUM(sewa_keluar.jumlah) as jumlah_sewa FROM `sewa_keluar` JOIN katalog ON sewa_keluar.id_produk = katalog.id_produk JOIN cabang ON katalog.id_cabang = cabang.id JOIN produk ON sewa_keluar.id_produk = produk.id";
+
+    return $this->db->query($query)->result_array();
+  }
 }

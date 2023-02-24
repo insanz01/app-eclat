@@ -32,7 +32,7 @@ class PrintController extends CI_Controller {
         break;
       case "sewa_masuk":
         // $this->sewa_masuk();
-        var_dump("sementara fitur ini ga ada, aplikasi xampp nda rusak");
+        var_dump("sementara fitur ini ga ada, aplikasi xampp nda rusak"); die;
         break;
     }
   }

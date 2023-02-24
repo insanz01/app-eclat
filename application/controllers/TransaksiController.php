@@ -19,7 +19,7 @@ class TransaksiController extends CI_Controller {
 
   public function check_produk_pinjam() {
     $kode_produk = $this->input->post("kode_produk");
-
+    
     $data['produk'] = $this->transaksi_m->get_produk_by_code($kode_produk);
 
     $this->load->view('templates/panel/header');

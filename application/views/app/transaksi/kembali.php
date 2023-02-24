@@ -50,7 +50,7 @@
               </table>
               <?php if($produk): ?>
                 <form action="<?= base_url("transaksi/do_kembali") ?>" method="post">
-                  <input type="hidden" name="KTP_penyewa" value="KTP_penyewa">
+                  <input type="hidden" name="KTP_penyewa" value="KTP_penyewa" value="<?= $KTP_penyewa ?>">
                   <button type="submit" class="btn btn-primary btn-block mt-2">KEMBALIKAN SEWA</button>
                 </form>
               <?php endif; ?>

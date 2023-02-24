@@ -112,7 +112,7 @@
           </li>
 
           <li class="nav-item">
-            <a href="<?= base_url("print") ?>" class="nav-link">
+            <a href="<?= base_url("print") ?>" class="nav-link" target="_blank">
               <i class="nav-icon fas fa-print"></i>
               <p>
                 PRINT LAPORAN

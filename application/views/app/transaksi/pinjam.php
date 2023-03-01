@@ -21,6 +21,14 @@
   <!-- Main content -->
   <section class="content">
     <div class="container">
+      <?php if($this->session->userdata("pesan")): ?>
+        <div class="row">
+          <div class="col-8 text-center">
+            <?= $this->session->userdata("pesan") ?>
+          </div>
+          <div class="col-4"></div>
+        </div>
+      <?php endif; ?>
       <div class="row">
         <div class="col-8">
           <div class="card">

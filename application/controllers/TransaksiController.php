@@ -33,9 +33,9 @@ class TransaksiController extends CI_Controller {
     $data = $this->input->post();
 
     if($this->transaksi_m->add_sewa_pinjam($data)) {
-      $this->session->set_flashdata("pesan", "<div class='alert alert-success' role='alert'>Berhasil menambahkan data</div>");
+      $this->session->set_flashdata("pesan", "<div class='alert alert-success' role='alert'>Berhasil menambahkan data pinjam</div>");
     } else {
-      $this->session->set_flashdata("pesan", "<div class='alert alert-danger' role='alert'>Gagal menambahkan data</div>");
+      $this->session->set_flashdata("pesan", "<div class='alert alert-danger' role='alert'>Gagal menambahkan data pinjam</div>");
     }
 
     redirect("transaksi/pinjam");
@@ -68,9 +68,9 @@ class TransaksiController extends CI_Controller {
     $data = $this->input->post();
 
     if($this->transaksi_m->add_sewa_kembali($data)) {
-      $this->session->set_flashdata("pesan", "<div class='alert alert-success' role='alert'>Berhasil menambahkan data</div>");
+      $this->session->set_flashdata("pesan", "<div class='alert alert-success' role='alert'>Berhasil menambahkan data kembali</div>");
     } else {
-      $this->session->set_flashdata("pesan", "<div class='alert alert-danger' role='alert'>Gagal menambahkan data</div>");
+      $this->session->set_flashdata("pesan", "<div class='alert alert-danger' role='alert'>Gagal menambahkan data kembali</div>");
     }
 
     redirect("transaksi/kembali");

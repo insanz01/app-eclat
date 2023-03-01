@@ -29,9 +29,9 @@
             <tr>
               <td><?= $nomor++ ?></td>
               <td><?= $laporan['nama'] ?></td>
-              <td><?= $laporan['deskripsi'] ?></td>
+              <td><?= $laporan['detail'] ?></td>
               <td><?= $laporan['harga'] ?></td>
-              <td><?= base_url("uploads/image/") . $laporan['gambar'] ?></td>
+              <td><?= base_url("uploads/image/") . $laporan['foto'] ?></td>
             </tr>
           <?php endforeach; ?>
         </tbody>

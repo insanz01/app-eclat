@@ -41,7 +41,8 @@
                     <option value="produk">LAPORAN PRODUK</option>
                     <option value="cabang">LAPORAN CABANG</option>
                     <option value="tramsaksi">LAPORAN TRANSAKSI</option>
-                    <!-- <option value="sewa_masuk">LAPORAN SEWA & KEMBALI</option> -->
+                    <option value="sewa">LAPORAN SEWA KELUAR</option>
+                    <option value="masuk">LAPORAN SEWA KEMBALI</option>
                   </select>
                 </div>
 

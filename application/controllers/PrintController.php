@@ -30,9 +30,11 @@ class PrintController extends CI_Controller {
       case "transaksi":
         $this->transaksi();
         break;
-      case "sewa_masuk":
-        // $this->sewa_masuk();
-        var_dump("sementara fitur ini ga ada, aplikasi xampp nda rusak"); die;
+      case "sewa":
+        $this->sewa();
+        break;
+      case "masuk":
+        $this->kembali();
         break;
     }
   }
@@ -55,9 +57,15 @@ class PrintController extends CI_Controller {
     $this->load->view("app/print/transaksi", $data);
   }
 
-  public function sewa_masuk() {
-    $data['all_laporan'] = [];
+  public function sewa() {
+    $data['all_laporan'] = $this->transaksi_m->get_all_sewa_report();
 
-    $this->load->view("app/print/sewa_masuk", $data);
+    $this->load->view("app/print/sewa", $data);
+  }
+
+  public function kembali() {
+    $data['all_laporan'] = $this->transaksi_m->get_all_kembali_report();
+
+    $this->load->view("app/print/masuk", $data);
   }
 }

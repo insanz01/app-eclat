@@ -8,34 +8,34 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-    <title>Laporan Sewa</title>
+    <title>Laporan Sewa Kembali</title>
   </head>
   <body>
     
     <div class="container my-5 py-5">
 
-      <h3 class="text-center mb-2">LAPORAN SEWA BARANG</h3>
+      <h3 class="text-center mb-2">LAPORAN SEWA BARANG KEMBALI</h3>
       <table class="table table-bordered">
         <thead>
           <th>#</th>
-          <th>NIP</th>
-          <th>Nama Karyawan</th>
-          <th>Durasi Lembur</th>
-          <th>Jam Mulai</th>
-          <th>Jam Selesai</th>
-          <th>Tanggal Lembur</th>
+          <th>Kode Barang</th>
+          <th>Nama Barang</th>
+          <th>KTP Penyewa</th>
+          <th>Penyewa</th>
+          <th>Tanggal Sewa</th>
+          <th>Tanggal Kembali</th>
         </thead>
         <tbody>
           <?php $nomor = 1 ?>
           <?php foreach($all_laporan as $laporan): ?>
             <tr>
               <td><?= $nomor++ ?></td>
-              <td><?= $laporan['NIP'] ?></td>
-              <td><?= $laporan['nama'] ?></td>
-              <td><?= $laporan['durasi'] ?></td>
-              <td><?= $laporan['jam_mulai'] ?></td>
-              <td><?= $laporan['jam_selesai'] ?></td>
-              <td><?= $laporan['tanggal_lembur'] ?></td>
+              <td><?= $laporan['kode_produk'] ?></td>
+              <td><?= $laporan['nama_produk'] ?></td>
+              <td><?= $laporan['KTP_penyewa'] ?></td>
+              <td><?= $laporan['nama_penyewa'] ?></td>
+              <td><?= $laporan['tanggal_sewa'] ?></td>
+              <td><?= $laporan['tanggal_kembali'] ?></td>
             </tr>
           <?php endforeach; ?>
         </tbody>

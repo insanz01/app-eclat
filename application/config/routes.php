@@ -102,4 +102,5 @@ $route["print/setup"] = "PrintController/setup";
 $route["print/produk"] = "PrintController/produk";
 $route["print/cabang"] = "PrintController/cabang";
 $route["print/transaksi"] = "PrintController/transaksi";
-$route["print/sewa_masuk"] = "PrintController/sewa_masuk";
+$route["print/sewa"] = "PrintController/sewa";
+$route["print/masuk"] = "PrintController/masuk";

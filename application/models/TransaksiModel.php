@@ -6,7 +6,7 @@ class TransaksiModel extends CI_Model {
   }
 
   public function get_produk_by_code($kode_produk) {
-    $query = "SELECT produk.id, produk.nama, produk.detail, produk.merk, produk.harga, katalog.jumlah FROM katalog JOIN produk ON katalog.id_produk = produk.id WHERE produk.kode_produk = '$kode_produk'";
+    $query = "SELECT produk.id, produk.nama, produk.detail, produk.merk, produk.harga, katalog.jumlah FROM katalog JOIN produk ON katalog.id_produk = produk.id WHERE katalog.kode_produk = '$kode_produk'";
 
     return $this->db->query($query)->row_array();
   }
@@ -18,7 +18,7 @@ class TransaksiModel extends CI_Model {
   }
 
   public function get_produk_kembali_by_code($kode_produk) {
-    $query = "SELECT sewa_keluar.id as id_sewa, produk.id as id_produk, produk.nama, produk.detail, produk.merk, produk.harga, sewa_keluar.NIP_penyewa, sewa_keluar.nama_penyewa, sewa_keluar.jumlah, sewa_keluar.created_at as tanggal_sewa FROM sewa_keluar JOIN produk ON sewa_keluar.id_produk = produk.id WHERE produk.kode_produk = '$kode_produk'";
+    $query = "SELECT sewa_keluar.id as id_sewa, produk.id as id_produk, produk.nama, produk.detail, produk.merk, produk.harga, sewa_keluar.NIP_penyewa, sewa_keluar.nama_penyewa, sewa_keluar.jumlah, sewa_keluar.created_at as tanggal_sewa FROM sewa_keluar JOIN produk ON sewa_keluar.id_produk = produk.id JOIN katalog ON produk.id = katalog.id_produk WHERE katalog.kode_produk = '$kode_produk'";
 
     return $this->db->query($query)->row_array();
   }
@@ -86,13 +86,13 @@ class TransaksiModel extends CI_Model {
   }
 
   public function get_all_sewa_report() {
-    $query = "SELECT sewa_keluar.id_produk, produk.kode_produk, produk.nama as nama_produk, SUM(sewa_keluar.jumlah) as jumlah, sewa_keluar.KTP_penyewa, sewa_keluar.nama_penyewa, sewa_keluar.created_at as tanggal_sewa FROM sewa_keluar JOIN produk ON sewa_keluar.id_produk = produk.id GROUP BY sewa_keluar.id_produk";
+    $query = "SELECT sewa_keluar.id_produk, katalog.kode_produk, produk.nama as nama_produk, SUM(sewa_keluar.jumlah) as jumlah, sewa_keluar.KTP_penyewa, sewa_keluar.nama_penyewa, sewa_keluar.created_at as tanggal_sewa FROM sewa_keluar JOIN produk ON sewa_keluar.id_produk = produk.id JOIN katalog ON produk.id = katalog.id_produk GROUP BY sewa_keluar.id_produk";
 
     return $this->db->query($query)->result_array();
   }
 
   public function get_all_kembali_report() {
-    $query = "SELECT sewa_keluar.id_produk, produk.kode_produk, produk.nama as nama_produk, SUM(sewa_keluar.jumlah) as jumlah, sewa_keluar.KTP_penyewa, sewa_keluar.nama_penyewa, sewa_keluar.created_at as tanggal_sewa, sewa_masuk.created_at as tanggal_kembali FROM sewa_masuk JOIN sewa_keluar ON sewa_masuk.id_sewa_keluar = sewa_keluar.id JOIN produk ON produk.id = sewa_keluar.id_produk";
+    $query = "SELECT sewa_masuk.id, sewa_keluar.id_produk, katalog.kode_produk, produk.nama as nama_produk, SUM(sewa_keluar.jumlah) as jumlah, sewa_keluar.KTP_penyewa, sewa_keluar.nama_penyewa, sewa_keluar.created_at as tanggal_sewa, sewa_masuk.created_at as tanggal_kembali FROM sewa_masuk JOIN sewa_keluar ON sewa_masuk.id_sewa_keluar = sewa_keluar.id JOIN produk ON produk.id = sewa_keluar.id_produk JOIN katalog ON produk.id = katalog.id_produk";
 
     return $this->db->query($query)->result_array();
   }

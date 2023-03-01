@@ -24,6 +24,8 @@ class KatalogModel extends CI_Model {
   }
 
   public function insert($data) {
+    $data['kode_produk'] = random_string("alnum", 7);
+
     return $this->db->insert("katalog", $data);
   }
 

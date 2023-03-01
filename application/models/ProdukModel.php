@@ -15,9 +15,7 @@ class ProdukModel extends CI_Model {
     return $this->db->get_where("produk", ['id' => $id])->row_array();
   }
 
-  public function insert($data) {
-    $data['kode_produk'] = random_string("alnum", 7);
-    
+  public function insert($data) {    
     $this->db->insert("produk", $data);
     return $this->db->insert_id();
   }

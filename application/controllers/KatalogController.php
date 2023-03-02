@@ -29,6 +29,10 @@ class KatalogController extends CI_Controller
       $data['katalog'] = $this->katalog_m->get_all_by_cabang_id($filter_cabang);
       $id_cabang = $filter_cabang;
       $this->session->set_userdata("filter_cabang", $filter_cabang);
+    } else if($this->session->userdata("filter_cabang")) {
+      $filter_cabang = $this->session->userdata("filter_cabang");
+      $data['katalog'] = $this->katalog_m->get_all_by_cabang_id($filter_cabang);
+      $id_cabang = $filter_cabang;
     } else {
       $data['katalog'] = $this->katalog_m->get_all_by_cabang_id($data['cabang'][0]['id']);
       $id_cabang = $data['cabang'][0]['id'];
@@ -40,6 +44,10 @@ class KatalogController extends CI_Controller
       $nama_cabang = $cabang['nama'];
     }
 
+    $data['filter_cabang'] = $filter_cabang;
+    if($this->session->userdata("filter_cabang") && !$filter_cabang) {
+      $data['filter_cabang'] = $this->session->userdata("filter_cabang");
+    }
     $data['id_cabang'] = $id_cabang;
     $data['nama_cabang'] = $nama_cabang;
 
@@ -101,9 +109,9 @@ class KatalogController extends CI_Controller
     $id = $this->input->post('id');
 
     if($this->katalog_m->delete($id)) {
-      $this->session->set_flashdata("pesan", "<div class='alert alert-success' role='alert'>Berhasil menghapusa data</div>");
+      $this->session->set_flashdata("pesan", "<div class='alert alert-success' role='alert'>Berhasil menghapus data</div>");
     } else {
-      $this->session->set_flashdata("pesan", "<div class='alert alert-danger' role='alert'>Gagal menghapusa data</div>");
+      $this->session->set_flashdata("pesan", "<div class='alert alert-danger' role='alert'>Gagal menghapus data</div>");
     }
 
     redirect('katalog');

@@ -35,6 +35,16 @@
         </tbody>
       </table>
 
+      <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-4"></div>
+        <div class="col-4 text-center">
+            <h6>YANG BERTANDA TANGAN</h6>
+            <br><br><br>
+            <hr>
+        </div>
+      </div>
+
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->

@@ -57,8 +57,6 @@ class TransaksiController extends CI_Controller {
     $data['produk'] = $this->transaksi_m->get_produk_kembali_by_KTP($KTP_penyewa);
     $data['KTP_penyewa'] = $KTP_penyewa;
 
-    // var_dump($KTP_penyewa); die;
-
     $this->load->view('templates/panel/header');
     $this->load->view('templates/panel/sidebar');
     $this->load->view('templates/panel/navbar');

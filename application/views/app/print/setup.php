@@ -40,7 +40,7 @@
                     <option value="">- PILIH KATEGORI -</option>
                     <option value="produk">LAPORAN PRODUK</option>
                     <option value="cabang">LAPORAN CABANG</option>
-                    <option value="tramsaksi">LAPORAN TRANSAKSI</option>
+                    <option value="transaksi">LAPORAN TRANSAKSI</option>
                     <option value="sewa">LAPORAN SEWA KELUAR</option>
                     <option value="masuk">LAPORAN SEWA KEMBALI</option>
                   </select>

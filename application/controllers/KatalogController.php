@@ -7,9 +7,9 @@ class KatalogController extends CI_Controller
   {
     parent::__construct();
 
-    // if(!$this->session->userdata('SESS_KANIGARA_USERID')) {
-    //   redirect('auth');
-    // }
+    if(!$this->session->userdata('SESS_KANIGARA_USERID')) {
+      redirect('auth');
+    }
 
     $this->load->model('KatalogModel', 'katalog_m');
     $this->load->model('CabangModel', 'cabang_m');

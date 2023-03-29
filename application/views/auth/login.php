@@ -2,7 +2,7 @@
   <div class="col-12 login-page">
     <div class="login-box">
       <div class="login-logo">
-        <a class="text-white" href="<?= base_url() ?>"><b>Login</b> | KANIGARA</a>
+        <a class="text-white" href="<?= base_url() ?>"><b>Login</b> | ECLAT</a>
       </div>
       <!-- /.login-logo -->
       <div class="card">

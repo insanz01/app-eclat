@@ -7,9 +7,9 @@ class ProdukController extends CI_Controller
   {
     parent::__construct();
 
-    // if(!$this->session->userdata('SESS_KANIGARA_USERID')) {
-    //   redirect('auth');
-    // }
+    if(!$this->session->userdata('SESS_KANIGARA_USERID')) {
+      redirect('auth');
+    }
 
     $this->load->model('ProdukModel', 'produk_m');
   }

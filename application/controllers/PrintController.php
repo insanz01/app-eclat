@@ -4,6 +4,10 @@ class PrintController extends CI_Controller {
   public function __construct() {
     parent::__construct();
 
+    if(!$this->session->userdata('SESS_KANIGARA_USERID')) {
+      redirect('auth');
+    }
+
     $this->load->model("ProdukModel", "produk_m");
     $this->load->model("CabangModel", "cabang_m");
     $this->load->model("TransaksiModel", "transaksi_m");

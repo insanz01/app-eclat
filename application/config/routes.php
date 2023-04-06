@@ -60,47 +60,5 @@ $route['auth/logout'] = "AuthController/do_logout";
 
 $route['dashboard'] = "AppController/index";
 
-// CABANG
-$route['cabang'] = "CabangController/index";
-$route['cabang/add'] = "CabangController/add";
-$route['cabang/do_add'] = "CabangController/do_add";
-$route['cabang/edit/(:any)'] = "CabangController/edit/$1";
-$route['cabang/do_edit/(:any)'] = "CabangController/do_edit/$1";
-$route['cabang/delete'] = "CabangController/delete";
-
-// PRODUK
-$route['produk'] = "ProdukController/index";
-$route['produk/add'] = "ProdukController/add";
-$route['produk/do_add'] = "ProdukController/do_add";
-$route['produk/edit/(:any)'] = "ProdukController/edit/$1";
-$route['produk/do_edit/(:any)'] = "ProdukController/do_edit/$1";
-$route['produk/delete'] = "ProdukController/delete";
-
-// KATALOG
-$route['katalog'] = "KatalogController/index";
-$route['katalog/add'] = "KatalogController/add";
-$route['katalog/do_add'] = "KatalogController/do_add";
-$route['katalog/edit/(:any)'] = "KatalogController/edit/$1";
-$route['katalog/do_edit/(:any)'] = "KatalogController/do_edit/$1";
-$route['katalog/delete'] = "KatalogController/delete";
-
-$route['laporan/produk'] = "LaporanController/produk";
-$route['laporan/cabang'] = "LaporanController/cabang";
-$route['laporan/katalog'] = "LaporanController/katalog";
-
-$route["transaksi/pinjam"] = "TransaksiController/pinjam";
-$route["transaksi/pinjam/check_produk"] = "TransaksiController/check_produk_pinjam";
-$route["transaksi/do_pinjam"] = "TransaksiController/do_pinjam";
-
-$route["transaksi/kembali"] = "TransaksiController/kembali";
-$route["transaksi/kembali/check_produk"] = "TransaksiController/check_produk_kembali";
-$route["transaksi/do_kembali"] = "TransaksiController/do_kembali";
-
-$route["print"] = "PrintController/index";
-$route["print/setup"] = "PrintController/setup";
-
-$route["print/produk"] = "PrintController/produk";
-$route["print/cabang"] = "PrintController/cabang";
-$route["print/transaksi"] = "PrintController/transaksi";
-$route["print/sewa"] = "PrintController/sewa";
-$route["print/masuk"] = "PrintController/masuk";
+$route['panel/unggah'] = "AppController/unggah";
+$route['panel/laporan'] = "AppController/laporan";

@@ -39,9 +39,9 @@ class AppController extends CI_Controller
   public function do_unggah() {
     $config['upload_path']          = './uploads/';
     $config['allowed_types']        = 'xlsx|csv';
-    $config['max_size']             = 100;
-    $config['max_width']            = 1024;
-    $config['max_height']           = 768;
+    $config['max_size']             = 100000;
+    // $config['max_width']            = 1024;
+    // $config['max_height']           = 768;
 
     $this->load->library('upload', $config);
 
